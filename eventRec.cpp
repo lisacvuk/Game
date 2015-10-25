@@ -8,7 +8,7 @@ bool Game::EventReceiverClass::OnEvent(const SEvent &TEvent) {
 				runn=false;
 				break;
 			}
-			return true;
+			return false;
 		}
 		return false;
 	}
