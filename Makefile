@@ -5,7 +5,7 @@
 # Name of the executable created (.exe will be added automatically if necessary)
 Target := Sniper
 # List of source files, separated by spaces
-Sources := main.cpp eventRec.cpp
+Sources := main.cpp eventRec.cpp quake3Stuff.cpp
 # Path to Irrlicht directory, should contain include/ and lib/
 IrrlichtHome := /home/lisacvuk/Irrlicht/Irrlicht
 # Path for the executable. Note that Irrlicht.dll should usually also be there for win32 systems

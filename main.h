@@ -18,14 +18,12 @@ private:
   IGUIEnvironment* guienv;
   ISceneManager* smgr;
   ICameraSceneNode* camera;
+  ISceneNode* mapNode = 0;
+  IQ3LevelMesh* map;
   class EventReceiverClass : public IEventReceiver{
   public:
-  bool runn;
-  virtual bool OnEvent(const SEvent &TEvent);
-  };
-  class Quake3Stuff{
-  public:
-    void loadPK3Archive(const io::path);
+    bool runn;
+    virtual bool OnEvent(const SEvent &TEvent);
   };
   EventReceiverClass eventRec;
 
@@ -36,6 +34,10 @@ public:
   void loadTerrain();
   void setupCamera();
   void setupHud();
+  void loadLevel(const signed int);
+  //Quake 3 functions
+  void loadPK3Archive(const io::path&);
+  void loadMap(const io::path&);
   //Utility functions
 };
 

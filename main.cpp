@@ -58,7 +58,12 @@ void Game::loadTerrain(){
     driver->getTexture("resources/textures/skybox/coulee_ft.jpg"),
     driver->getTexture("resources/textures/skybox/coulee_bk.jpg"));
 }
-
+void Game::loadLevel(const signed int levelNum){
+    loadPK3Archive(io::path("resources/arhives/test.pk3"));
+    if(levelNum == 1){
+      loadMap(io::path("maps/20kdm2.bsp"));
+    }
+}
 void Game::startGame(){
   stringw ver_info = "Sniper version alpha";
   guienv->addStaticText(ver_info.c_str(), rect<s32>(10,10,360,22), false);
@@ -67,6 +72,7 @@ void Game::startGame(){
   device->setWindowCaption(L"Sniper");
   setupCamera();
   loadTerrain();
+  /*loadLevel(1);*/
   mainLoop();
 }
 void Game::setupCamera(){
